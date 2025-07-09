@@ -20,7 +20,7 @@ DOCUMENTATION = r'''
     options:
       number_of_workers:
         description: Number of worker nodes to generate
-        required: true
+        required: false
 '''
 
 class HostDoesNotExist(Exception):
