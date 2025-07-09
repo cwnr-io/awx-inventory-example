@@ -52,7 +52,7 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
 
     def __init__(self):
         super(InventoryModule, self).__init__()
-        self.number_of_workers = None
+        self.number_of_workers = 10
     def verify_file(self, path: str):
         if super(InventoryModule, self).verify_file(path):
             return path.endswith('yaml') or path.endswith('yml')
