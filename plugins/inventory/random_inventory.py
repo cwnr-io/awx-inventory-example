@@ -65,12 +65,12 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
 
             for group, number_of_hosts in [
                 ("etcd", 3),
-                ("kube-master", 3),
-                ("kube-worker", self.number_of_workers)
+                ("kube_master", 3),
+                ("kube_worker", self.number_of_workers)
             ]:
                 self.inventory.add_group(group)
                 for _ in range(number_of_hosts):
-                    host = "host-" + str(random.randint(100000, 999999))
+                    host = "host_" + str(random.randint(100000, 999999))
                     self.inventory.add_host(host)
                     self.inventory.add_child(group, host)
                     self.inventory.set_variable(host, "role", group)
