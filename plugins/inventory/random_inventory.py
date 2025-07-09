@@ -60,7 +60,6 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
 
     def parse(self, inventory: Any, loader: Any, path: Any, cache: bool = True) -> Any:
         super(InventoryModule, self).parse(inventory, loader, path, cache)
-        self._read_config_data(path)  # This also loads the cache
         try:
             self.number_of_workers = self.get_option('number_of_workers')
 
