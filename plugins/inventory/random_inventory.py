@@ -48,7 +48,7 @@ class GroupDoesNotExist(Exception):
 
 class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
 
-    NAME = 'cwnr.bnp.random_plugin'
+    NAME = 'random_plugin'
 
     def __init__(self):
         super(InventoryModule, self).__init__()
