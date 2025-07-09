@@ -2,10 +2,10 @@
 A simple inventory plugin that generates a random inventory
 """
 
-import json
 import random
 import uuid
 
+from os import environ
 from typing import Any
 
 # The imports below are the ones required for an Ansible plugin
@@ -61,7 +61,7 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
     def parse(self, inventory: Any, loader: Any, path: Any, cache: bool = True) -> Any:
         super(InventoryModule, self).parse(inventory, loader, path, cache)
         try:
-            self.number_of_workers = self.get_option('number_of_workers')
+            self.number_of_workers = environ.get("number_of_workers") or self.number_of_workers
 
             for group, number_of_hosts in [
                 ("etcd", 3),
