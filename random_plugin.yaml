@@ -1,2 +1,1 @@
-plugin: cwnr.bnp.random_plugin
-number_of_workers: 10
+plugin: random_inventory
